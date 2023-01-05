@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Code-Editor</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="https://www.w3schools.com/images/w3schools_logo_436_2.png">
+  <meta property="og:image:type" content="image/png">
+  <link rel="stylesheet" href="style.css">
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })
+      (window,document,'script','dataLayer','GTM-KTCFC3S');
+        var subjectFolder = location.pathname;
+        subjectFolder = subjectFolder.replace("/", "");
+        subjectFolder = subjectFolder.substr(0, subjectFolder.indexOf("/"));
+    </script>
+    <script data-cfasync="false" type="text/javascript">
+        window.snigelPubConf = {
+          "adengine": {
+            "activeAdUnits": ["try_it_leaderboard"]
+          }
+        }
+      uic_r_a()
+    </script>
+    <script>
+        if (window.addEventListener) {              
+            window.addEventListener("resize", browserResize);
+        } else if (window.attachEvent) {                 
+            window.attachEvent("onresize", browserResize);
+        }
+        var xbeforeResize = window.innerWidth;
+        function browserResize() {
+            var afterResize = window.innerWidth;
+            if ((xbeforeResize < (970) && afterResize >= (970)) || (xbeforeResize >= (970) && afterResize < (970)) ||
+                (xbeforeResize < (728) && afterResize >= (728)) || (xbeforeResize >= (728) && afterResize < (728)) ||
+                (xbeforeResize < (468) && afterResize >= (468)) ||(xbeforeResize >= (468) && afterResize < (468))) {
+                xbeforeResize = afterResize;
+                if (document.getElementById("adngin-try_it_leaderboard-0")) {
+                        adngin.queue.push(function(){  adngin.cmd.startAuction(["try_it_leaderboard"]); });
+                    }
+            }
+            if (window.screen.availWidth <= 768) {
+              restack(window.innerHeight > window.innerWidth);
+            }
+            fixDragBtn();
+            showFrameSize();    
+        }
+        var fileID = "";
+    </script>
+</head>
+<body>
+  <div class="trytopnav">
+    <div class="w3-bar" style="overflow:auto">
+      <a href="javascript:void(0);" onclick="openMenu()" id="menuButton" title="Open Menu" class="w3-dropdown-click w3-button w3-bar-item topnav-icons fa fa-menu" style="margin-top:-2px;"></a>
+      <a href="javascript:void(0);" onclick="spaceIt.showDialog()" title="Save code" class="w3-button w3-bar-item topnav-icons fa fa-save" style="margin-top:-2px;"></a>
+      <a href="javascript:void(0);" onclick="restack(currentStack)" title="Change Orientation" class="w3-button w3-bar-item w3-hide-small topnav-icons fa fa-rotate" style="margin-top:-2px;"></a>
+      <a href="javascript:void(0);" onclick="retheme()" title="Change Theme" class="w3-button w3-bar-item topnav-icons fa fa-adjust" style="margin-top:-2px;"></a>
+      <button id="runbtn" class="w3-button w3-bar-item w3-hover-white w3-hover-text-green" onclick="submitTryit(1);uic_r_p();">Run &#10095;</button>
+      <button id="runbtn" class="w3-button w3-bar-item w3-hover-white w3-hover-text-green" onclick="copyCode();">Copy Code &#10095; </button>
+    </div>
+    <div class="w3-bar-block">
+      <a class="w3-bar-item w3-button" href='javascript:void(0);' title="Change Orientaton" onclick="openMenu();restack(currentStack)"><i class="fa fa-rotate" style="font-size:36px; margin-left:-4px; margin-right:8px;"></i><span style="position:relative;top:-4px;left:2px;">Change Orientation</span></a>
+      <a class="w3-bar-item w3-button" href="javascript:void(0);" title="Save" onclick="openMenu();spaceIt.showDialog()"><i class="fa fa-save" style="font-size:26px;margin-right:10px;"></i><span style="position:relative;top:-4px;left:2px;">Save Code</span></a>
+      <a class="w3-bar-item w3-button" href='javascript:void(0);' title="Change Theme" onclick="openMenu();retheme()"><i class="fa fa-adjust" style="font-size:26px;margin-right:8px"></i><span style="position:relative;top:-4px;left:2px;">Change Theme, Dark/Light</span></a>
+    </div>
+  </div>
+  <a href="javascript:void(0)" id="dragbar"></a>
+
+  <div id="container">
+    <div id="navbarDropMenu" class="w3-dropdown-content w3-bar-block w3-border" style="z-index:5">
+      <span onclick="openMenu()" class="w3-button w3-display-topright w3-transparent ws-hover-black" title="Close Menu" style="font-weight:bold;padding-top:10px;padding-bottom:11px;">&times;</span>
+      
+    </div>
+    <div id="menuOverlay" class="w3-overlay w3-transparent" style="cursor:pointer;z-index:4"></div>
+    <div id="textareacontainer">
+      <div id="textarea">
+        <div id="textareawrapper">
+
+<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false"><!DOCTYPE html>
+<html>
+  <body>
+
+    <h2>This is first Heading.</h2>
+    <p>This is a paragraph.</p>
+
+  </body>
+</html>
+</textarea>
+
+          <form id="codeForm" autocomplete="off" style="margin:0px;display:none;">
+            <input type="hidden" name="code" id="code" />
+          </form>       
+        </div>
+      </div>
+    </div>
+    <div id="iframecontainer">
+      <div id="iframe">
+        <div id="iframewrapper">          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
